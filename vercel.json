@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/viewer.html"
+    }
+  ],
+  "builds": [
+    {
+      "src": "build/generic/web",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}
