@@ -16,8 +16,4 @@
         }
       ]
     }
-  ],
-  "static": {
-    "directory": "build/generic/web"
-  }
-}
+  ]
