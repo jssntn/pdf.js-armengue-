@@ -1,14 +1,23 @@
 {
+  "cleanUrls": true,
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/viewer.html"
+      "destination": "/build/generic/web/viewer.html"
     }
   ],
-  "routes": [
+  "headers": [
     {
-      "src": "/(.*)",
-      "dest": "/"
+      "source": "/(.*).(js|css|html|png|jpg|jpeg|svg|woff|woff2)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
-  ]
+  ],
+  "static": {
+    "directory": "build/generic/web"
+  }
 }
