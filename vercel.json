@@ -1,14 +1,26 @@
 {
+  "builds": [
+    {
+      "src": "gulpfile.js",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "scripts": {
+    "build": "npx gulp generic"
+  },
   "cleanUrls": true,
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/build/generic/web/viewer.html"
+      "destination": "/build/generic/build/web/viewer.html"
     }
   ],
   "headers": [
     {
-      "source": "/(.*).(js|css|html|png|jpg|jpeg|svg|woff|woff2)",
+      "source": "/build/(.*).(js|css|html|png|jpg|jpeg|svg|woff|woff2)",
       "headers": [
         {
           "key": "Cache-Control",
